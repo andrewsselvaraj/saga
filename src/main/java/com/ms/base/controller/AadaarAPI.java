@@ -34,7 +34,7 @@ public class AadaarAPI {
         System.out.println(todo);
         return todo;
 	}
-	
+	@Retryable(maxAttempts = 8, backoff = @Backoff(delay = 1000))
 	@GetMapping({ "/sagachoreographer1" })
 	public String callAadhaarApi1(@RequestParam("aadahaarno") String aadahaarno) {
  
